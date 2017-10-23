@@ -1,17 +1,18 @@
 package segundaunidad;
 
 public class ListaDoblementeEnlazada {
-	private Canciones cabeza;
+	private Musica cabeza;
+	private Musica cola;
 	public ListaDoblementeEnlazada() {
-		this.cabeza=null;
-		
+		cabeza=null;
+		cola=null;	
 	}
 	
-	public Canciones getCabeza() {
+	public Musica getCabeza() {
 		return cabeza;
 	}
 
-	public void setCabeza(Canciones cabeza) {
+	public void setCabeza(Musica cabeza) {
 		this.cabeza = cabeza;
 	}
 
@@ -23,10 +24,10 @@ public class ListaDoblementeEnlazada {
 		return respuesta;
 	}
 	public void insertar(NodoDobleEnlazado valor) {
-		Canciones nuevo=new Canciones();
+		Musica nuevo=new Musica();
 		nuevo.setValor(valor);
-		nuevo.setSiguiente(null);
-		nuevo.setAnterior(null);
+		nuevo.setSig(null);
+		nuevo.setAnt(null);
 		this.cabeza=nuevo;
 	}
 	public void insertarnodoadelante(NodoDobleEnlazado valor)
@@ -35,11 +36,11 @@ public class ListaDoblementeEnlazada {
 			insertar(valor);
 		}
 		else {
-			Canciones nuevo=new Canciones();
+			Musica nuevo=new Musica();
 			nuevo.setValor(valor);
-			nuevo.setSiguiente(this.cabeza);
-			this.cabeza.setAnterior(nuevo);
-			nuevo.setAnterior(null);
+			nuevo.setSig(this.cabeza);
+			this.cabeza.setAnt(nuevo);
+			nuevo.setAnt(null);
 			this.cabeza=nuevo;
 			
 		}
