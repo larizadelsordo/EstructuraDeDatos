@@ -1,28 +1,51 @@
 package segundaunidad;
 
 public class Musica {
+	private String id_cancion;
+	private String nombrecancion;
+	private String album;
+	private String artista;
+	public String getNombrecancion() {
+		return nombrecancion;
+	}
+	public void setNombrecancion(String nombrecancion) {
+		this.nombrecancion = nombrecancion;
+	}
+	private String genero;
+	public String getId_cancion() {
+		return id_cancion;
+	}
+	public void setId_cancion(String i) {
+		this.id_cancion = i;
+	}
+	public String getAlbum() {
+		return album;
+	}
+	public void setAlbum(String album) {
+		this.album = album;
+	}
+	public String getArtista() {
+		return artista;
+	}
+	public void setArtista(String artista) {
+		this.artista = artista;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
 	
-	private NodoDobleEnlazado valor;
-	private Musica sig;
-	private Musica ant;
-	public NodoDobleEnlazado getValor() {
-		return valor;
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "DATOS: "+"ID"+this.id_cancion+" Nombre de la cancion;"+this.nombrecancion+" ARTISTA:"+this.artista+"ALBUM"+this.album+"GENERO"+this.genero;
 	}
-	public void setValor(NodoDobleEnlazado valor) {
-		this.valor = valor;
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		Musica temp=(Musica) o;
+		return this.id_cancion.compareTo(temp.getId_cancion());
 	}
-	public Musica getSig() {
-		return sig;
-	}
-	public void setSig(Musica sig) {
-		this.sig = sig;
-	}
-	public Musica getAnt() {
-		return sig;
-	}
-	public void setAnt(Musica ant) {
-		this.sig = ant;
-	}
-	
 
 }
