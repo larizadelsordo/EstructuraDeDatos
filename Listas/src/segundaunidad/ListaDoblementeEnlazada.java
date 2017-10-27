@@ -75,10 +75,10 @@ public class ListaDoblementeEnlazada {
 	public StringBuilder mostrarfrente() {
 		StringBuilder cadena = new StringBuilder();
 		NodoDobleEnlazado temp=inicio;
-	    cadena.append("NULL<---> ");
+	    cadena.append("NULL---- ");
 	    while(temp!=null) {
 	    	cadena.append(temp.getValor());
-	    	cadena.append("-->");
+	    	cadena.append("----");
 			temp=temp.getSiguiente();
 	    	
 	    }
@@ -90,10 +90,10 @@ public class ListaDoblementeEnlazada {
 	public StringBuilder mostrardetras() {
 		StringBuilder cadena = new StringBuilder();
 		NodoDobleEnlazado temp=fin;
-	    cadena.append("NULL<---> ");
+	    cadena.append("NULL---- ");
 	    while(temp!=null) {
 	    	cadena.append(temp.getValor());
-	    	cadena.append("-->");
+	    	cadena.append("----");
 			temp=temp.getAnterior();
 	    	
 	    }

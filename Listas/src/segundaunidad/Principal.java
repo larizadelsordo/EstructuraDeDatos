@@ -25,11 +25,11 @@ import javax.swing.SwingConstants;
 public class Principal extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textid;
-	private JTextField textalbum;
-	private JTextField textartista;
-	private JTextField textgenero;
-	private JTextField textnombre;
+	private JTextField txtid;
+	private JTextField txtalbum;
+	private JTextField txtartista;
+	private JTextField txtgenero;
+	private JTextField txtnombre;
 	ListaDoblementeEnlazada ld=new ListaDoblementeEnlazada();
 
 	/**
@@ -60,115 +60,115 @@ public class Principal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton btnIngresarNodoAdelante = new JButton("Ingresar nodo Adelante");
-		btnIngresarNodoAdelante.setBackground(new Color(255, 228, 181));
-		btnIngresarNodoAdelante.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		btnIngresarNodoAdelante.setForeground(new Color(219, 112, 147));
-		btnIngresarNodoAdelante.setBounds(354, 58, 181, 23);
-		btnIngresarNodoAdelante.addActionListener(new ActionListener() {
+		JButton btningresaradelante = new JButton("Ingresar nodo Adelante");
+		btningresaradelante.setBackground(new Color(255, 228, 181));
+		btningresaradelante.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		btningresaradelante.setForeground(new Color(219, 112, 147));
+		btningresaradelante.setBounds(354, 58, 181, 23);
+		btningresaradelante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(textid.getText().isEmpty()||textnombre.getText().isEmpty()||textalbum.getText().isEmpty()||textartista.getText().isEmpty()||textgenero.getText().isEmpty()) {
-					JOptionPane.showMessageDialog(null,"llenar todos los campos ");
+				if(txtid.getText().isEmpty()||txtnombre.getText().isEmpty()||txtalbum.getText().isEmpty()||txtartista.getText().isEmpty()||txtgenero.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Completar todos los campos");
 				}else {
 				
 				
 				Musica nuevo=new Musica();
-				nuevo.setId_cancion(textid.getText());
-				nuevo.setNombrecancion(textnombre.getText());
-				nuevo.setAlbum(textalbum.getText());
-				nuevo.setArtista(textartista.getText());
-				nuevo.setGenero(textgenero.getText());
+				nuevo.setId_cancion(txtid.getText());
+				nuevo.setNombrecancion(txtnombre.getText());
+				nuevo.setAlbum(txtalbum.getText());
+				nuevo.setArtista(txtartista.getText());
+				nuevo.setGenero(txtgenero.getText());
 				
 				
 			    ld.insertarfinal(nuevo);
-			    JOptionPane.showMessageDialog(null,"valores insertados adelante");
-			    textid.setText("");
-			    textnombre.setText("");
-			    textalbum.setText("");
-			    textartista.setText("");
-			    textgenero.setText("");
+			    JOptionPane.showMessageDialog(null,"Valores insertados adelante de forma correcta.");
+			    txtid.setText("");
+			    txtnombre.setText("");
+			    txtalbum.setText("");
+			    txtartista.setText("");
+			    txtgenero.setText("");
 				}
 			}
 		});
 		contentPane.setLayout(null);
-		contentPane.add(btnIngresarNodoAdelante);
+		contentPane.add(btningresaradelante);
 		
-		JButton btnIngresarNodoAtras = new JButton("Ingresar nodo Atras ");
-		btnIngresarNodoAtras.setBackground(new Color(255, 228, 181));
-		btnIngresarNodoAtras.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		btnIngresarNodoAtras.setForeground(new Color(219, 112, 147));
-		btnIngresarNodoAtras.setBounds(354, 118, 181, 23);
-		btnIngresarNodoAtras.addMouseListener(new MouseAdapter() {
+		JButton btningresaratras = new JButton("Ingresar nodo Atras ");
+		btningresaratras.setBackground(new Color(255, 228, 181));
+		btningresaratras.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		btningresaratras.setForeground(new Color(219, 112, 147));
+		btningresaratras.setBounds(354, 118, 181, 23);
+		btningresaratras.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				if(textid.getText().isEmpty()||textnombre.getText().isEmpty()||textalbum.getText().isEmpty()||textartista.getText().isEmpty()||textgenero.getText().isEmpty()) {
-					JOptionPane.showMessageDialog(null,"llenar todos los campos ");
+				if(txtid.getText().isEmpty()||txtnombre.getText().isEmpty()||txtalbum.getText().isEmpty()||txtartista.getText().isEmpty()||txtgenero.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null,"Completar todos los campos");
 				}else {
 				
 				
 				Musica nuevo=new Musica();
-				nuevo.setId_cancion(textid.getText());
-				nuevo.setNombrecancion(textnombre.getText());
-				nuevo.setAlbum(textalbum.getText());
-				nuevo.setArtista(textartista.getText());
-				nuevo.setGenero(textgenero.getText());
+				nuevo.setId_cancion(txtid.getText());
+				nuevo.setNombrecancion(txtnombre.getText());
+				nuevo.setAlbum(txtalbum.getText());
+				nuevo.setArtista(txtartista.getText());
+				nuevo.setGenero(txtgenero.getText());
 				
 				
 			    ld.insertarfinal(nuevo);
-			    JOptionPane.showMessageDialog(null,"valores insertados atras");
-			    textid.setText("");
-			    textnombre.setText("");
-			    textalbum.setText("");
-			    textartista.setText("");
-			    textgenero.setText("");
+			    JOptionPane.showMessageDialog(null,"Valores insertados atras de forma correcta");
+			    txtid.setText("");
+			    txtnombre.setText("");
+			    txtalbum.setText("");
+			    txtartista.setText("");
+			    txtgenero.setText("");
 				}
 			}
 		});
-		contentPane.add(btnIngresarNodoAtras);
+		contentPane.add(btningresaratras);
 		
-		JButton btnEliminarPrimerNodo = new JButton("Eliminar primer Nodo");
-		btnEliminarPrimerNodo.setBackground(new Color(255, 228, 181));
-		btnEliminarPrimerNodo.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		btnEliminarPrimerNodo.setForeground(new Color(219, 112, 147));
-		btnEliminarPrimerNodo.setBounds(354, 170, 181, 23);
-		btnEliminarPrimerNodo.addMouseListener(new MouseAdapter() {
+		JButton btneliminarprimero = new JButton("Eliminar primer Nodo");
+		btneliminarprimero.setBackground(new Color(255, 228, 181));
+		btneliminarprimero.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		btneliminarprimero.setForeground(new Color(219, 112, 147));
+		btneliminarprimero.setBounds(354, 170, 181, 23);
+		btneliminarprimero.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro?", "Alerta!", JOptionPane.YES_NO_OPTION);
+				int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar el registro?", "Alerta!", JOptionPane.YES_NO_OPTION);
 				if (JOptionPane.OK_OPTION == resp)
 				{
 					ld.eliminarinicio();
-					JOptionPane.showMessageDialog(null, "registro eliminado ");
+					JOptionPane.showMessageDialog(null, "Registro Eliminado ");
 				}
 					else
-						JOptionPane.showMessageDialog(null, "NO SE A  BORRADO NADA  ");
+						JOptionPane.showMessageDialog(null, "No se ha borrado");
 					
 				
 			}
 		});
-		contentPane.add(btnEliminarPrimerNodo);
+		contentPane.add(btneliminarprimero);
 		
-		JButton btnEliminarUltimoNodo = new JButton("Eliminar Ultimo Nodo");
-		btnEliminarUltimoNodo.setBackground(new Color(255, 228, 181));
-		btnEliminarUltimoNodo.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		btnEliminarUltimoNodo.setForeground(new Color(219, 112, 147));
-		btnEliminarUltimoNodo.setBounds(354, 226, 181, 23);
-		btnEliminarUltimoNodo.addMouseListener(new MouseAdapter() {
+		JButton btneliminarultimo = new JButton("Eliminar Ultimo Nodo");
+		btneliminarultimo.setBackground(new Color(255, 228, 181));
+		btneliminarultimo.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		btneliminarultimo.setForeground(new Color(219, 112, 147));
+		btneliminarultimo.setBounds(354, 226, 181, 23);
+		btneliminarultimo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro?", "Alerta!", JOptionPane.YES_NO_OPTION);
+				int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar el registro?", "Alerta!", JOptionPane.YES_NO_OPTION);
 				if (JOptionPane.OK_OPTION == resp)
 				{
 					ld.eliminarfinal();
-					JOptionPane.showMessageDialog(null, "registro eliminado ");
+					JOptionPane.showMessageDialog(null, "Registro Eliminado");
 				}
 					else
-						JOptionPane.showMessageDialog(null, "NO SE A  BORRADO NADA  ");
+						JOptionPane.showMessageDialog(null, "No se ha borrado");
 					
 			
 			}
 		});
-		contentPane.add(btnEliminarUltimoNodo);
+		contentPane.add(btneliminarultimo);
 		
 		
 		TextArea txtresul = new TextArea();
@@ -208,68 +208,64 @@ public class Principal extends JFrame {
 		});
 		contentPane.add(btnRecorridoAtras);
 		
-		JLabel lblIngreseIdDe = new JLabel("Ingrese id de la cancion :");
+		JLabel lblIngreseIdDe = new JLabel("Ingrese id de la cancion:");
 		lblIngreseIdDe.setBounds(20, 11, 162, 18);
 		lblIngreseIdDe.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		contentPane.add(lblIngreseIdDe);
 		
-		JLabel lblIngreseElAlbum = new JLabel("Ingrese el album");
+		JLabel lblIngreseElAlbum = new JLabel("Ingrese el album:");
 		lblIngreseElAlbum.setBounds(20, 146, 140, 14);
 		lblIngreseElAlbum.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		contentPane.add(lblIngreseElAlbum);
 		
-		JLabel lblIngreseElArtista = new JLabel("Ingrese el artista");
+		JLabel lblIngreseElArtista = new JLabel("Ingrese el artista:");
 		lblIngreseElArtista.setBounds(20, 202, 147, 14);
 		lblIngreseElArtista.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		contentPane.add(lblIngreseElArtista);
 		
-		JLabel lblIngreseElGenero = new JLabel("Ingrese el genero");
+		JLabel lblIngreseElGenero = new JLabel("Ingrese el genero:");
 		lblIngreseElGenero.setBounds(20, 258, 140, 14);
 		lblIngreseElGenero.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		contentPane.add(lblIngreseElGenero);
 		
-		textid = new JTextField();
-		textid.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		textid.setBounds(20, 40, 182, 20);
-		contentPane.add(textid);
-		textid.setColumns(10);
+		txtid = new JTextField();
+		txtid.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		txtid.setBounds(20, 40, 182, 20);
+		contentPane.add(txtid);
+		txtid.setColumns(10);
 		
-		textalbum = new JTextField();
-		textalbum.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		textalbum.setBounds(20, 171, 182, 20);
-		contentPane.add(textalbum);
-		textalbum.setColumns(10);
+		txtalbum = new JTextField();
+		txtalbum.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		txtalbum.setBounds(20, 171, 182, 20);
+		contentPane.add(txtalbum);
+		txtalbum.setColumns(10);
 		
-		textartista = new JTextField();
-		textartista.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		textartista.setBounds(20, 227, 182, 20);
-		contentPane.add(textartista);
-		textartista.setColumns(10);
+		txtartista = new JTextField();
+		txtartista.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		txtartista.setBounds(20, 227, 182, 20);
+		contentPane.add(txtartista);
+		txtartista.setColumns(10);
 		
-		textgenero = new JTextField();
-		textgenero.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		textgenero.setBounds(20, 283, 182, 20);
-		contentPane.add(textgenero);
-		textgenero.setColumns(10);
+		txtgenero = new JTextField();
+		txtgenero.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		txtgenero.setBounds(20, 283, 182, 20);
+		contentPane.add(txtgenero);
+		txtgenero.setColumns(10);
 		
-		JLabel lblNombreDeLa = new JLabel("Nombre de la cancion");
+		JLabel lblNombreDeLa = new JLabel("Nombre de la cancion:");
 		lblNombreDeLa.setBounds(20, 74, 162, 14);
 		lblNombreDeLa.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 		contentPane.add(lblNombreDeLa);
 		
-		textnombre = new JTextField();
-		textnombre.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-		textnombre.setBounds(20, 105, 182, 20);
-		contentPane.add(textnombre);
-		textnombre.setColumns(10);
-		ImageIcon foto2 = new ImageIcon("C:\\Users\\Diego\\Downloads\\images.jpg");
+		txtnombre = new JTextField();
+		txtnombre.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+		txtnombre.setBounds(20, 105, 182, 20);
+		contentPane.add(txtnombre);
+		txtnombre.setColumns(10);
 		JLabel fondo = new JLabel("");
-		fondo.setBackground(new Color(255, 228, 225));
+		fondo.setBackground(Color.PINK);
 		fondo.setHorizontalAlignment(SwingConstants.CENTER);
 		fondo.setBounds(10, 0, 580, 506);
-		fondo.setIcon(new ImageIcon("C:\\Users\\Diego\\Downloads\\images.jpg"));
-		ImageIcon icono_linea2 = new ImageIcon(foto2.getImage().getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_DEFAULT));
-		fondo.setIcon(icono_linea2);
-		contentPane.add(fondo);
+		
 	}
 }

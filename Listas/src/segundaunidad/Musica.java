@@ -1,22 +1,22 @@
 package segundaunidad;
 
 public class Musica {
-	private String id_cancion;
-	private String nombrecancion;
+	private String idcancion;
+	private String nombre;
 	private String album;
 	private String artista;
-	public String getNombrecancion() {
-		return nombrecancion;
+	public String getnombrecancion() {
+		return nombre;
 	}
 	public void setNombrecancion(String nombrecancion) {
-		this.nombrecancion = nombrecancion;
+		this.nombre = nombrecancion;
 	}
 	private String genero;
 	public String getId_cancion() {
-		return id_cancion;
+		return idcancion;
 	}
 	public void setId_cancion(String i) {
-		this.id_cancion = i;
+		this.idcancion = i;
 	}
 	public String getAlbum() {
 		return album;
@@ -40,12 +40,12 @@ public class Musica {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "DATOS: "+"ID"+this.id_cancion+" Nombre de la cancion;"+this.nombrecancion+" ARTISTA:"+this.artista+"ALBUM"+this.album+"GENERO"+this.genero;
+		return "DATOS: "+"  ID "+this.idcancion+"  Nombre de la cancion:  "+this.nombre+" ARTISTA:  "+this.artista+"  ALBUM:  "+this.album+"  GENERO:  "+this.genero;
 	}
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
 		Musica temp=(Musica) o;
-		return this.id_cancion.compareTo(temp.getId_cancion());
+		return this.idcancion.compareTo(temp.getId_cancion());
 	}
 
 }

@@ -5,8 +5,8 @@ public class NodoDobleEnlazado {
 	private NodoDobleEnlazado siguiente;
 	private NodoDobleEnlazado anterior;
 	
-	public NodoDobleEnlazado(Musica val, NodoDobleEnlazado sigui,NodoDobleEnlazado ant) {
-		siguiente=sigui;
+	public NodoDobleEnlazado(Musica val, NodoDobleEnlazado sig,NodoDobleEnlazado ant) {
+		siguiente=sig;
 		anterior=ant;
 		valor=val;
 	}
